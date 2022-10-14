@@ -177,10 +177,27 @@ const Question = ({
           i + 1,
           selectedAnswers?.filter((s) => s == i + 1)?.length > 0
         )} */}
+
             <FormControlLabel
               value={s}
               control={<Checkbox />}
-              label={s}
+              // label={s}
+              label={
+                <>
+                  {questions[activeQuestion]?.image_stems_flag > 0 ? (
+                    <img
+                      src={s}
+                      key={i}
+                      className="profile-img"
+                      width="150px"
+                      height="auto"
+                      style={{ marginRight: "5px", margin: "10px 10px" }}
+                    />
+                  ) : (
+                    s
+                  )}
+                </>
+              }
               onClick={(e) => {
                 // console.log(
                 //   "option selected",
@@ -200,6 +217,7 @@ const Question = ({
                   : false
               }
             />
+
             {/* {console.log(
           "testig 7",
           answeredQuestions

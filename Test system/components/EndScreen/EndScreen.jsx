@@ -5,9 +5,17 @@ import Link from "next/link";
 import { Link as AnchorLink } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
-function EndScreen({ results, refreshTest, totalQuestions, timeTaken,resumeTimer,restartTimer }) {
+function EndScreen({
+  results,
+  refreshTest,
+  totalQuestions,
+  timeTaken,
+  resumeTimer,
+  restartTimer,
+}) {
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
+  const [Percentage_Obtained, setPercentage_Obtained] = useState(0);
   useEffect(() => {
     console.log("end results", results);
     let c = 0,
@@ -17,6 +25,7 @@ function EndScreen({ results, refreshTest, totalQuestions, timeTaken,resumeTimer
     });
     setCorrect(c);
     setWrong(w);
+    setPercentage_Obtained((correct / totalQuestions) * 100);
   }, [results]);
 
   return (
@@ -138,6 +147,35 @@ function EndScreen({ results, refreshTest, totalQuestions, timeTaken,resumeTimer
               }}
             >
               {correct}
+            </Box>
+          </Typography>
+          <Typography
+            sx={{
+              fontFamily: "Work Sans",
+              fontSize: "24px",
+              lineHeight: "32px",
+              fontStyle: "normal",
+              fontWeight: 600,
+              color: "#252525",
+              textAlign: "start",
+              textTransform: "unset",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              mt: 1,
+            }}
+          >
+            Percentage:
+            <Box
+              component={"span"}
+              sx={{
+                ml: 1,
+                fontWeight: 400,
+                color: "#252525",
+                textAlign: "start",
+              }}
+            >
+              {Percentage_Obtained.toFixed(2)}
             </Box>
           </Typography>
           <Typography
