@@ -15,7 +15,6 @@ function EndScreen({
 }) {
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
-  const [Percentage_Obtained, setPercentage_Obtained] = useState(0);
   useEffect(() => {
     console.log("end results", results);
     let c = 0,
@@ -25,7 +24,6 @@ function EndScreen({
     });
     setCorrect(c);
     setWrong(w);
-    setPercentage_Obtained((correct / totalQuestions) * 100);
   }, [results]);
 
   return (
@@ -175,7 +173,7 @@ function EndScreen({
                 textAlign: "start",
               }}
             >
-              {Percentage_Obtained.toFixed(2)}
+              {((correct / totalQuestions) * 100).toFixed(2)}
             </Box>
           </Typography>
           <Typography

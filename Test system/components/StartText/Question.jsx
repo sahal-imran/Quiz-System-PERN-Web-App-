@@ -105,16 +105,31 @@ const Question = ({
       {/* Options */}
 
       <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "start",
-          flexDirection: "column",
-          minHeight: "100px",
-          p: 1,
-          mb: 2,
-        }}
+        sx={
+          questions[activeQuestion]?.image_stems_flag > 0
+            ? {
+                width: "100%",
+                display: "grid",
+                gridTemplateColumns: { lg: "40% 40%", xs: "90%" },
+                gridColumnGap: "10%",
+                justifyContent: "center",
+                alignItems: "start",
+                flexDirection: "column",
+                minHeight: "100px",
+                p: 1,
+                mb: 2,
+              }
+            : {
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                minHeight: "100px",
+                p: 1,
+                mb: 2,
+              }
+        }
         id="stems-parent-element"
       >
         {questions[activeQuestion]?.stems?.map((s, i) => (
@@ -138,8 +153,8 @@ const Question = ({
                     alignItems: "center",
                     px: 2,
                     borderRadius: "30px",
-                    border: "1px solid #3f51b5",
-                    background: "rgb(9,230,97,0.1)",
+                    // border: "1px solid #3f51b5",
+                    // background: "rgb(9,230,97,0.1)",
                     my: 0.5,
                   }
                 : selectedAnswers?.filter((s) => s == i + 1)?.length > 0 &&
@@ -151,8 +166,8 @@ const Question = ({
                     alignItems: "center",
                     px: 2,
                     borderRadius: "30px",
-                    border: "1px solid #3f51b5",
-                    background: "rgb(230,9,97,0.1)",
+                    // border: "1px solid #3f51b5",
+                    // background: "rgb(230,9,97,0.1)",
                     my: 0.5,
                   }
                 : {
@@ -163,9 +178,9 @@ const Question = ({
                     px: 2,
                     borderRadius: "30px",
                     // border: "1px solid #3f51b5",
-                    border: "1px solid lightgray",
+                    // border: "1px solid lightgray",
                     // background: "rgb(9,230,97,0.1)",
-                    background: "rgb(200,200,200,0.1)",
+                    // background: "rgb(200,200,200,0.1)",
                     my: 0.5,
                   }
             }
@@ -189,8 +204,8 @@ const Question = ({
                       src={s}
                       key={i}
                       className="profile-img"
-                      width="150px"
-                      height="auto"
+                      width="280px"
+                      height="280px"
                       style={{ marginRight: "5px", margin: "10px 10px" }}
                     />
                   ) : (
