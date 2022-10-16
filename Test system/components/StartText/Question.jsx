@@ -154,8 +154,8 @@ const Question = ({
                     alignItems: "center",
                     px: 2,
                     borderRadius: "30px",
-                    // border: "1px solid #3f51b5",
-                    // background: "rgb(9,230,97,0.1)",
+                    border: "1px solid #3f51b5",
+                    background: "rgb(9,230,97,0.1)",
                     my: 0.5,
                   }
                 : selectedAnswers?.filter((s) => s == i + 1)?.length > 0 &&
@@ -167,7 +167,7 @@ const Question = ({
                     alignItems: "center",
                     px: 2,
                     borderRadius: "30px",
-                    // border: "1px solid #3f51b5",
+                    border: "1px solid #3f51b5",
                     // background: "rgb(230,9,97,0.1)",
                     my: 0.5,
                   }
@@ -179,7 +179,7 @@ const Question = ({
                     px: 2,
                     borderRadius: "30px",
                     // border: "1px solid #3f51b5",
-                    // border: "1px solid lightgray",
+                    border: "1px solid lightgray",
                     // background: "rgb(9,230,97,0.1)",
                     // background: "rgb(200,200,200,0.1)",
                     my: 0.5,
