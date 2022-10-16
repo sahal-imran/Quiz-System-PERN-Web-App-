@@ -87,7 +87,8 @@ const Question = ({
             flexDirection: "column",
             minHeight: "100px",
             p: 1,
-            my: 2,
+            mt: 2,
+            mb:4
           }}
         >
           <img
@@ -204,9 +205,9 @@ const Question = ({
                       src={s}
                       key={i}
                       className="profile-img"
-                      width="280px"
-                      height="280px"
-                      style={{ marginRight: "5px", margin: "10px 10px" }}
+                      width="420px"
+                      height="340px"
+                      style={{ marginRight: "5px", margin: "10px 10px",objectFit:"fill" }}
                     />
                   ) : (
                     s
