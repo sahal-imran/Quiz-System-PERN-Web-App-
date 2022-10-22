@@ -1,7 +1,7 @@
-import Instruction from "../components/Instruction/Instruction";
+import AvailableTest from "../components/AvailableTest/AvailableTest";
 
 function index() {
-  return <Instruction />;
+  return <AvailableTest />;
 }
 
 export default index;
